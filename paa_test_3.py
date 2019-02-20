@@ -20,7 +20,7 @@ Gradient boosting
 # model_name:        name of the model to be saved
 
 '''
-# Example: MusicGenre, Classes
+# Example: MusicGenre, Classes , 폴더면이 클래스명이 됨
 from pyAudioAnalysis import audioTrainTest as aT
 aT.featureAndTrain(["/home/tyiannak/Desktop/MusicGenre/Classical/","/home/tyiannak/Desktop/MusicGenre/Electronic/","/home/tyiannak/Desktop/MusicGenre/Jazz/"], 1.0, 1.0, aT.shortTermWindow, aT.shortTermStep, "svm", "svmMusicGenre3", True)
 aT.featureAndTrain(["/home/tyiannak/Desktop/MusicGenre/Classical/","/home/tyiannak/Desktop/MusicGenre/Electronic/","/home/tyiannak/Desktop/MusicGenre/Jazz/"], 1.0, 1.0, aT.shortTermWindow, aT.shortTermStep, "knn", "knnMusicGenre3", True)
@@ -33,7 +33,7 @@ aT.featureAndTrain(["/home/tyiannak/Desktop/5Class/Silence/","/home/tyiannak/Des
 aT.featureAndTrain(["/home/tyiannak/Desktop/5Class/Silence/","/home/tyiannak/Desktop/5Class/SpeechMale/","/home/tyiannak/Desktop/5Class/SpeechFemale/","/home/tyiannak/Desktop/5Class/ObjectsOther/","/home/tyiannak/Desktop/5Class/Music/"], 1.0, 1.0, aT.shortTermWindow, aT.shortTermStep, "gradientboosting", "gb5Classes")
 aT.featureAndTrain(["/home/tyiannak/Desktop/5Class/Silence/","/home/tyiannak/Desktop/5Class/SpeechMale/","/home/tyiannak/Desktop/5Class/SpeechFemale/","/home/tyiannak/Desktop/5Class/ObjectsOther/","/home/tyiannak/Desktop/5Class/Music/"], 1.0, 1.0, aT.shortTermWindow, aT.shortTermStep, "randomforest", "rf5Classes")
 
-# Command-line use: SM, 
+# Command-line use: SM - Speeach / Music 
 # python audioAnalysis.py trainClassifier -i <directory1> ... <directoryN> --method <svm, svm_rbf, knn, extratrees, gradientboosting or randomforest> -o <modelName> --beat (optional for beat extraction)
 # python audioAnalysis.py trainClassifier -i classifierData/speech/ classifierData/music/ --method svm -o data/svmSM
 # python audioAnalysis.py trainClassifier -i classifierData/speech/ classifierData/music/ --method knn -o data/knnSM
