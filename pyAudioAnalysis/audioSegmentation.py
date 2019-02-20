@@ -227,14 +227,20 @@ def plotSegmentationResults(flags_ind, flags_ind_gt, class_names, mt_step, ONLY_
         ax2.axis((0, len(class_names) + 1, 0, 100))
         ax2.set_xticks(numpy.array(range(len(class_names) + 1)))
         ax2.set_xticklabels([" "] + class_names)
-        ax2.bar(numpy.array(range(len(class_names))) + 0.5, percentages)
+
+        # ax2.bar(numpy.array(range(len(class_names))) + 0.5, percentages)
+        ax2.bar(numpy.array(range(len(class_names))) + 0.5, percentages.reshape(1,-1)[0])
 
         ax3 = fig.add_subplot(224)
         plt.title("Segment average duration per class")
         ax3.axis((0, len(class_names)+1, 0, av_durations.max()))
         ax3.set_xticks(numpy.array(range(len(class_names) + 1)))
         ax3.set_xticklabels([" "] + class_names)
-        ax3.bar(numpy.array(range(len(class_names))) + 0.5, av_durations)
+
+        # av_durations.reshape(1,-1)
+        # ax3.bar(numpy.array(range(len(class_names))) + 0.5, av_durations)
+        ax3.bar(numpy.array(range(len(class_names))) + 0.5, av_durations.reshape(1,-1)[0])
+
         fig.tight_layout()
         plt.show()
     return accuracy
